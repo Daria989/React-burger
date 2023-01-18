@@ -31,13 +31,14 @@ function Card({description}: TIngredientTypeCardDescription) {
   if (type === 'bun') counter--;
 
   return (
-      <div onClick={getDetails} ref = {ref} style={{ opacity }} className={`m-3 ${card.item}`}>
+      <div data-testid = 'link' onClick={getDetails} ref = {ref} style={{ opacity }} className={`m-3 ${card.item}`}>
         <Link 
           to={{
             pathname: `/ingredients/${_id}`,
-            state: { background: location }
+            state: { background: location },
           }}
-            className={card.link}>
+          // data-testid = 'link'
+          className={card.link}>
           <div className={card.image}>
             <img src={image} alt={card.name}/>
             {counter > 0? <Counter count={counter} size="small" /> : null}

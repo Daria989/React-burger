@@ -6,6 +6,7 @@ import { TBurgerOrderObject, TIngredientType } from '../../utils/types';
 
 function CardOrder({data}: TBurgerOrderObject){
   const dataIngredients : any = useSelector(store => store.addIngredientsList.data);
+  const arrIngredientsWithoutNull = data.ingredients.filter((item: string) => item !== null);
 
   function findArrWithImages(arrOrderIds: Array<string>, arrAllIngredients: Array<TIngredientType>): Array<TIngredientType> {
     const arrSixImages =  unique(arrOrderIds).slice(0, 6)
@@ -29,9 +30,9 @@ function CardOrder({data}: TBurgerOrderObject){
             </div>
             <div className = {`mb-2 ${cardOrder.details}`}>
                 <div className = {cardOrder.images}>
-                    {findArrWithImages(data.ingredients, dataIngredients)}
+                    {findArrWithImages(arrIngredientsWithoutNull, dataIngredients)}
                 </div>
-                <div className = {`text text_type_digits-default ${cardOrder.price}`}>{findPrice(data.ingredients, dataIngredients)}</div>
+                <div className = {`text text_type_digits-default ${cardOrder.price}`}>{findPrice(arrIngredientsWithoutNull, dataIngredients)}</div>
                 <CurrencyIcon type="primary"/>
             </div>
         </div>

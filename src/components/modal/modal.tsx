@@ -22,8 +22,8 @@ function Modal({onClose, children}: TModal) {
             <ModalOverlay onClose={onClose}/>
             <div className = {popup.content} >
                 <div className={popup.header}>
-                    <div className={`mt-10  mr-10 ${popup.closeIcon}`}>
-                        <CloseIcon type="primary" onClick={onClose}/>
+                    <div data-testid = 'close' className={`mt-10  mr-10 ${popup.closeIcon}`}>
+                        <CloseIcon  type="primary" onClick={onClose}/>
                     </div>
                 </div>
                 {children}

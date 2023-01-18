@@ -31,7 +31,7 @@ function AppHeader() {
           </Link>
         </li>
         <li className={`${appHeader.profile} pl-5 pr-5 pb-4 pt-4`}>
-          <Link className = {appHeader.link} to="/profile">
+          <Link data-testid = 'profile' className = {appHeader.link} to="/profile">
             <ProfileIcon type={pathname === '/profile' ? 'primary' : 'secondary'}/>
             {user ?  
               <span className={pathname === '/profile' ? `${appHeader.textActive} pl-2 text text_type_main-default`: `${appHeader.text} pl-2 text text_type_main-default`}>{user}</span>

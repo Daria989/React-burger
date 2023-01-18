@@ -28,7 +28,7 @@ function doneOrders(arr: Array<TBurgerOrder>) {
 }
 
 function notDone(arr: Array<TBurgerOrder>) {
-  return arr.filter((obj: TBurgerOrder) => obj.status !== 'done').map((obj: TBurgerOrder) => <div key={obj._id} className = {`text text_type_digits-default mr-2 ${feed.number}`}>{obj.number}</div>)
+  return arr.filter((obj: TBurgerOrder) => obj.status !== 'done').map((obj: TBurgerOrder) => <div key={obj._id} className = {`text text_type_digits-default mr-2 ${feed.number_in_work}`}>{obj.number}</div>)
 }
     
 return (

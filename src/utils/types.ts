@@ -22,7 +22,7 @@ export type TIconTypes = 'secondary' | 'primary' | 'error' | 'success';
 export type TIngredientType = {
     _id: string,
     key: number,
-    dragId: number,
+    dragId: string,
     name: string,
     type: string,
     proteins: number,

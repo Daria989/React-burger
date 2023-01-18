@@ -17,7 +17,7 @@ export interface IGetConstructorListAction {
   
   export interface IDeleteConstructorElementAction {
     readonly type: typeof DELETE_CONSTRUCTOR_ELEMENT,
-    data: number
+    data: string
   }
   
   export function getConstructorData(data: Array<TIngredientType>) {
@@ -38,7 +38,7 @@ export interface IGetConstructorListAction {
     }
    }
   
-  export function deleteConstructorElement(id: number) {
+  export function deleteConstructorElement(id: string) {
     return function(dispatch: AppDispatch) {
       dispatch({
         type: DELETE_CONSTRUCTOR_ELEMENT,

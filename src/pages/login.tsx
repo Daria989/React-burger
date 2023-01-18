@@ -56,9 +56,9 @@ function Login() {
 return (
     <div className={login.wrapper}>
         <div className={login.container}>
-            <form className={login.form} onSubmit={userAuthorization}>
+            <form data-testid = 'form' className={login.form} onSubmit={userAuthorization}>
                 <p className="text text_type_main-medium">Вход</p>
-                <Input type={'email'} size="default" value={emailValue} placeholder={'Email'} onChange={onChangeEmail}/>
+                <Input  type={'email'} size="default" value={emailValue} placeholder={'Email'} onChange={onChangeEmail}/>
                 <PasswordInput onChange={onChangePassword} size="default" value={passwordValue} name={'password'}/>
                 <Button type="primary" size="medium"> 
                     Войти

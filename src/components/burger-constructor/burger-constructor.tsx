@@ -23,7 +23,7 @@ function BurgerConstructor() {
   const location = useLocation();
   const history = useHistory();
 
-  const handleClose = (id: number) => {
+  const handleClose = (id: string) => {
     dispatch(deleteConstructorElement(id))
   };
 
@@ -87,7 +87,7 @@ function BurgerConstructor() {
     <>
       { data.length > 0 ?
       <div className={`mt-25 pl-4 ${burgerConstructor.container}`}>
-          <div ref={dropTargetRef} className={`text text_type_main-medium ${burgerConstructor.burger}`}>
+          <div data-testid = 'dropConstructor' ref={dropTargetRef} className={`text text_type_main-medium ${burgerConstructor.burger}`}>
               <div className={`mb-4 mr-2 pl-7 ${burgerConstructor.element}`}>
                 {findBun(data).length > 0?
                 <ConstructorElement
@@ -137,7 +137,7 @@ function BurgerConstructor() {
           </div>
         </div>
         :
-        <div className={`mt-25 pl-4 ${burgerConstructor.empty_container}`}>
+        <div data-testid = 'dropEmptyBox' className={`mt-25 pl-4 ${burgerConstructor.empty_container}`}>
           <div ref={dropTargetRef} className={`text text_type_main-medium ${burgerConstructor.empty_burger}`}>
             <p>Пожалуйста, перенесите сюда булку и ингредиенты для создания заказа</p>
           </div>

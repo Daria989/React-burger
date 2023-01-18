@@ -60,8 +60,7 @@
     height: 250px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap; 
 }
 
 .header {
@@ -72,6 +71,11 @@
 .number {
     color: #00CCCC;
 }
+
+.number_in_work{
+    color:#F2F2F3;
+}
+
 .done {
     height: 30px;
     width: 584px;

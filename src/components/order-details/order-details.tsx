@@ -10,7 +10,7 @@ function OrderDetails() {
         <>
             {res === 0 ? 
                 <Loader />
-            : <div className={`mr-25 ml-25 mt-4 mb-8 text text_type_digits-large`}>{res}</div>}
+            : <div data-testid = 'orderNumber' className={`mr-25 ml-25 mt-4 mb-8 text text_type_digits-large`}>{res}</div>}
             <div className={`mb-15 text text_type_main-medium`}>идентификатор заказа</div>
             <div className={`mb-15 ${orderDetails.image}`}>
                 <img src={done} alt="done"></img>

@@ -46,6 +46,9 @@
 	align-items: center;
 }
 
+.link:hover svg{
+	fill: #F2F2F3;
+}
 .textActive {
 	color:#F2F2F3;
 }
