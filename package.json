@@ -1,8 +1,8 @@
 {
-  "name": "react-burger",
+  "name": "React-burger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daria989.github.io/react-burger/",
+  "homepage": "https://daria989.github.io/React-burger/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.4",
