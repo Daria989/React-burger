@@ -174,6 +174,9 @@ export function getRegisterData(userName: string, email: string, password: strin
     dispatch({
 			type: GET_REGISTER_REQUEST,
 		});
+    // console.log(userName)
+    // console.log(email)
+    // console.log(password)
     registerRequest(userName, email, password)
     .then (res  => {
       if (res && res.success) {

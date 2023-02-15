@@ -3,6 +3,7 @@ import { PasswordInput } from '@ya.praktikum/react-developer-burger-ui-component
 import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
 import { useState } from 'react';
 import { Input } from '@ya.praktikum/react-developer-burger-ui-components';
+import { EmailInput } from '@ya.praktikum/react-developer-burger-ui-components';
 import { Link } from 'react-router-dom';
 import { getRegisterData } from '../services/actions/authActions';
 import { Redirect } from 'react-router-dom';
@@ -15,6 +16,11 @@ function Register() {
 
     const dispatch = useDispatch();
 
+    const [nameValue, setNameValue] = useState('');
+    const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setNameValue(e.target.value)
+    }
+
     const [emailValue, setEmailValue] = useState('');
     const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmailValue(e.target.value)
@@ -23,11 +29,6 @@ function Register() {
     const [passwordValue, setPasswordValue] = useState('');
     const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPasswordValue(e.target.value)
-    }
-
-    const [nameValue, setNameValue] = useState('');
-    const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNameValue(e.target.value)
     }
 
     const registerNewUser = () => {
@@ -58,11 +59,11 @@ return (
     <div className={register.wrapper}>
         <div className={register.container}>
             <p className="text text_type_main-medium">Регистрация</p>
-            <form onSubmit={registerNewUser} className={register.inputs}>
+            <form onSubmit={(event) => {event.preventDefault(); registerNewUser()}} className={register.inputs}>
                 <Input type={'text'} size="default" value={nameValue} placeholder={'Имя'}  onChange={onChangeName}/>
-                <Input type={'email'} size="default" value={emailValue} placeholder={'Email'} onChange={onChangeEmail}/>
+                <EmailInput size="default" value={emailValue} name={'email'} onChange={onChangeEmail}/>
                 <PasswordInput onChange={onChangePassword} size="default" value={passwordValue} name={'password'}/>
-                <Button type="primary" size="medium">
+                <Button htmlType="submit" type="primary" size="medium">
                     Зарегистрироваться
                 </Button>
             </form>
