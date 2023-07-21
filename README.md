@@ -2,7 +2,7 @@
 
 Проект космической бургерной в рамках учебного курса "React-разработчик" Я.Практикум
 
-["Stellar Burgers"](https://daria989.github.io/react-burger/ )
+["Stellar Burgers"](https://daria989.github.io/React-burger/)
 
 ### Стек технологий
 
